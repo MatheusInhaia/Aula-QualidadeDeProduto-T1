@@ -38,4 +38,62 @@ public class AppTest
         assertEquals(expected, actual);
     }
 
+	//----------------------------
+	
+	
+	
+	@Test
+	public void valorZero() {
+		int actual = App.identificaTriangulo(8, 0, 9);
+        int expected = tipos.INVALIDO.value();
+        assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void linha() {
+		int actual = App.identificaTriangulo(1, 2, 3);
+        int expected = tipos.NAOETRIANGULO.value();
+        assertEquals(expected, actual);
+	}
+	@Test
+	public void linhaLonga() {
+		int actual = App.identificaTriangulo(1, 2, 8);
+        int expected = tipos.NAOETRIANGULO.value();
+        assertEquals(expected, actual);
+	}
+	@Test
+	public void todosZero() {
+		int actual = App.identificaTriangulo(0, 0, 0);
+        int expected = tipos.NAOETRIANGULO.value();
+        assertEquals(expected, actual);
+	}
+	@Test
+	public void numerosReais() {
+		int actual = App.identificaTriangulo(1/2, 3/4, 5);
+        int expected = tipos.INVALIDO.value();
+        assertEquals(expected, actual);
+	}
+	@Test
+	public void variantesDe7() {
+		int actual = App.identificaTriangulo(1, 2, 3);
+        int expected = tipos.NAOETRIANGULO.value();
+        assertEquals(expected, actual);
+	}
+	@Test
+	public void variantesDe9() {
+		int actual = App.identificaTriangulo(8, 1, 2);
+        int expected = tipos.NAOETRIANGULO.value();
+        assertEquals(expected, actual);
+	}
+	/*
+	@Test
+	public void numParInvalidos() {
+		int actual = App.identificaTriangulo(7, 8);
+        int expected = tipos.INVALIDO.value();
+        assertEquals(expected, actual);
+	}
+	*/
+	
 }
+	
+	

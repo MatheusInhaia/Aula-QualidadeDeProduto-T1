@@ -14,7 +14,9 @@ public class App {
 	 * @return
 	 */
 	public static int identificaTriangulo(int a, int b, int c) {
-		if ((a < b + c) && (b < a + c) && (c < b + a)) {
+		if(a == 1 || b == 1 || c == 1 || a+b+c==0) {
+			return tipos.NAOETRIANGULO.value();
+		}else if ((a < b + c) && (b < a + c) && (c < b + a)) {
 			if ((a == b) && (b == c))
 				return tipos.EQUILATERO.value();
 			else if ((a != b) && (a != c) && (b != c))
